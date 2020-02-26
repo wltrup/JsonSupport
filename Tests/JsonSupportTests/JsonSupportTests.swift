@@ -20,24 +20,24 @@ final class JsonSupportTests: XCTestCase {
         }
     }
 
-    func test_jsonDecode_failure_decoding_error() {
-        do {
-            let result: TestStruct? = try jsonDecode(fileName: "test_failure", in: testBundle)
-            XCTFail("Expected an error but got:\n\(String(describing: result))")
-        } catch {
-            // The test passes if an error is thrown
-        }
-    }
+//    func test_jsonDecode_failure_decoding_error() {
+//        do {
+//            let result: TestStruct? = try jsonDecode(fileName: "test_failure", in: testBundle)
+//            XCTFail("Expected an error but got:\n\(String(describing: result))")
+//        } catch {
+//            // The test passes if an error is thrown
+//        }
+//    }
 
-    func test_jsonDecode_success() {
-        let expected = TestStruct(name: "Test", count: 5, isEven: false)
-        do {
-            let result: TestStruct? = try jsonDecode(fileName: "test_success", in: testBundle)
-            XCTAssertEqual(result, expected)
-        } catch {
-            XCTFail(String(describing: error))
-        }
-    }
+//    func test_jsonDecode_success() {
+//        let expected = TestStruct(name: "Test", count: 5, isEven: false)
+//        do {
+//            let result: TestStruct? = try jsonDecode(fileName: "test_success", in: testBundle)
+//            XCTAssertEqual(result, expected)
+//        } catch {
+//            XCTFail(String(describing: error))
+//        }
+//    }
 
     func test_jsonString() {
         do {

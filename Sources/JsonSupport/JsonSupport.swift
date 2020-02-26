@@ -1,6 +1,6 @@
 import Foundation
 
-public func jsonDecode <T: Decodable> (fileName: String, in bundle: Bundle) throws -> T? {
+public func jsonDecode <T: Decodable> (fileName: String, in bundle: Bundle = .main) throws -> T? {
     guard let dataUrl = bundle.url(forResource: fileName, withExtension: "json") else { return nil }
     let data = try Data(contentsOf: dataUrl)
     return try JSONDecoder().decode(T.self, from: data)
